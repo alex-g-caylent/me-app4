@@ -1,0 +1,29 @@
+.carousel {
+    display: flex;
+    justify-content: flex-start;
+    gap: var(--space-4);
+    width: 100%;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+.button {
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+	height: 100%;
+	width: 50px;
+	align-items: center;
+	justify-content: center;
+}
+
+@media (min-width: 1024px) {
+    .button {
+        display: flex;
+    }
+}
+
+.item {
+    scroll-snap-align: start;
+}

@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.radix-themes {
+	--default-font-family: var(--font-dm_sans) !important;
+}
+
+.bg-maestro {
+	background-color: #ece5e0;
+}
+
+.readable {
+	line-height: 1.8em !important;
+}
+
+/* FORMS */
+
+label {
+	display: block;
+}
+
+.no-block-label {
+	display: inline !important;
+}
+
+input {
+	display: block;
+	padding: 0.3em;
+	margin: 0.3em 0;
+	border: 1px solid rgb(220, 220, 220);
+	border-radius: 5px;
+	width: 100%;
+}
+
+textarea {
+	margin: 0.3em 0;
+	padding: 0.3em;
+	border: 1px solid rgb(220, 220, 220);
+	border-radius: 5px;
+	width: 100%;
+	min-height: 200px;
+}
+
+.file {
+	border: none;
+}
+
+.uploadLabel {
+	padding: 0.4em;
+	background-color: #f0f0f0;
+	width: 200px;
+	border-radius: 5px;
+	border: 1px solid gray;
+	text-align: center;
+	font-size: 0.9em;
+}
+
+select {
+	padding: 0.3em;
+	border-radius: 4px;
+	border: 1px solid rgb(220, 220, 220);
+}
+
+.form-section {
+	padding: 1em 0;
+	margin: 0.3em 0;
+	border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+.form-section:last-child {
+	border-bottom: none;
+}
+
+.tabs li {
+	/* Makes a horizontal row */
+	float: left;
+
+	/* So the psueudo elements can be
+       abs. positioned inside */
+	position: relative;
+}
+.tabs a {
+	/* Make them block level
+       and only as wide as they need */
+	float: left;
+	padding: 10px 20px;
+	text-decoration: none;
+	font-size: 15px;
+
+	/* Default colors */
+	color: black;
+	background: #ece5e0;
+
+	/* Only round the top corners */
+	-webkit-border-top-left-radius: 15px;
+	-webkit-border-top-right-radius: 15px;
+	-moz-border-radius-topleft: 15px;
+	-moz-border-radius-topright: 15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+.tabs .active {
+	/* Highest, active tab is on top */
+	z-index: 3;
+}
+.tabs .active a {
+	/* Colors when tab is active */
+	background: white;
+	color: black;
+}
+.tabs li:before,
+.tabs li:after,
+.tabs li a:before,
+.tabs li a:after {
+	/* All pseudo elements are 
+       abs. positioned and on bottom */
+	position: absolute;
+	bottom: 0;
+}
+/* Only the first, last, and active
+     tabs need pseudo elements at all */
+.tabs li:last-child:after,
+.tabs li:last-child a:after,
+.tabs li:first-child:before,
+.tabs li:first-child a:before,
+.tabs .active:after,
+.tabs .active:before,
+.tabs .active a:after,
+.tabs .active a:before {
+	content: "";
+}
+.tabs .active:before,
+.tabs .active:after {
+	background: white;
+
+	/* Squares below circles */
+	z-index: 1;
+}
+/* Squares */
+.tabs li:before,
+.tabs li:after {
+	background: #ece5e0;
+	width: 10px;
+	height: 10px;
+}
+.tabs li:before {
+	left: -10px;
+}
+.tabs li:after {
+	right: -10px;
+}
+/* Circles */
+.tabs li a:after,
+.tabs li a:before {
+	width: 20px;
+	height: 20px;
+	/* Circles are circular */
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	background: #ece5e0;
+
+	/* Circles over squares */
+	z-index: 2;
+}
+.tabs .active a:after,
+.tabs .active a:before {
+	background: #ece5e0;
+}
+/* First and last tabs have different
+     outside color needs */
+.tabs li:first-child.active a:before,
+.tabs li:last-child.active a:after {
+	background: #ece5e0;
+}
+.tabs li a:before {
+	left: -20px;
+}
+.tabs li a:after {
+	right: -20px;
+}
+
+.tabs li a:after :last-of-type {
+	display: none;
+}
+
+.chatbot {
+	background-color: #f5f2f0;
+	border-radius: 2em;
+	padding: 0.4em 0.8em;
+}
+
+.chatbot:focus {
+	border: none;
+}
+
+#chatarea {
+	width: 10000px !important;
+}
